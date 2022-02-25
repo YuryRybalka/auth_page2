@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       borderSide: BorderSide(
         color : Color (0xFF777777), width : 2));
     const linkTexStyle = TextStyle(
-        fontSize : 18,
+        fontSize : 19,
         fontWeight: FontWeight.bold,
         color : Color(0xFF0079D0));
     return MaterialApp(
@@ -26,10 +26,10 @@ class MyApp extends StatelessWidget {
               child: Column(children:  [
                 const SizedBox(height: 80),
                 const SizedBox(width: 103, height:80, child: Placeholder(),),
-                const SizedBox(height: 20),
+                const SizedBox(height: 40),
                 const Text('Введите логин в виде 10 цифр номера телефона',
                 style : const TextStyle(fontSize : 16,color : Color.fromRGBO(0,0,0,0.6)),),
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
                 const SizedBox(width:224,
                   child: TextField(
                       decoration: InputDecoration(
