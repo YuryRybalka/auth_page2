@@ -22,16 +22,24 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           //appBar: AppBar(title: Center(child: Text('Мой authpage test'))),
           body: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/bgr.jpg'),
+                    fit: BoxFit.cover,
+                ),
+              ),
               width: double.infinity,
-              child: Column(children:  [
-                const SizedBox(height: 80),
-                const SizedBox(width: 103, height:80, child: Placeholder(),),
-                const SizedBox(height: 40),
-                const Text('Введите логин в виде 10 цифр номера телефона',
-                style : const TextStyle(fontSize : 16,color : Color.fromRGBO(0,0,0,0.6)),),
-                const SizedBox(height: 50),
-                const SizedBox(width:224,
-                  child: TextField(
+              padding: const EdgeInsets.symmetric(horizontal: 50),
+              child: SingleChildScrollView(
+                child: Column(children:  [
+                  const SizedBox(height: 30),
+                  const SizedBox(width: 103, height:80, child: Image(image : AssetImage('assets/logopng.png')),),
+                  const SizedBox(height: 40),
+                  const Text('Введите логин в виде 10 цифр номера телефона',
+                  style : TextStyle(fontSize : 16,color : Color.fromRGBO(0,0,0,0.6)),),
+                  const SizedBox(height: 30),
+                  const TextField(
+                      keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.grey,
@@ -40,10 +48,8 @@ class MyApp extends StatelessWidget {
                         labelText: "Телефон",
                       )
                   ),
-                ),
-                const SizedBox(height: 20),
-                const SizedBox(width:224,
-                  child: const TextField(
+                  const SizedBox(height: 20),
+                  const TextField(
                       obscureText: true,
                       decoration: InputDecoration(
                         filled: true,
@@ -53,33 +59,34 @@ class MyApp extends StatelessWidget {
                         labelText: "Пароль",
                       )
                   ),
+                  const SizedBox(height: 68),
+                  SizedBox(
+                      width: 154, height: 42,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                            child: const Text('Войти'),
+                            style: ElevatedButton.styleFrom(
+                              primary: const Color(0xFF0079D0),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(36.0),
+                              ),
+                            ) , // ElevatedButton.styleFrom
+                      )
+                  ),
+                  const SizedBox(height: 52),
+                  InkWell(child:  const Text('Регистрация',style : linkTexStyle
+                                            ),
+                                  onTap: () {}
+                  ),
+                  const SizedBox(height: 20),
+                  InkWell(child: const Text('Забыли пароль?',
+                                            style : linkTexStyle
+                                        ),
+                          onTap: () {}
+                  ),
+                  const SizedBox(height: 20),
+                ],
                 ),
-                const SizedBox(height: 28),
-                SizedBox(
-                    width: 154, height: 42,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                          child: const Text('Войти'),
-                          style: ElevatedButton.styleFrom(
-                            primary: const Color(0xFF0079D0),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(36.0),
-                            ),
-                          ) , // ElevatedButton.styleFrom
-                    )
-                ),
-                const SizedBox(height: 32),
-                InkWell(child:  const Text('Регистрация',style : linkTexStyle
-                                          ),
-                                onTap: () {}
-                ),
-                const SizedBox(height: 20),
-                InkWell(child: const Text('Забыли пароль?',
-                                          style : linkTexStyle
-                                      ),
-                        onTap: () {}
-                )
-              ],
               )
           ),
         )
